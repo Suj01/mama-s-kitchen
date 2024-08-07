@@ -32,6 +32,7 @@ const Home = () => {
   const [foodName, setFoodName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
+  console.log(cartItems);
 
   useEffect(() => {
     const fetchFoods = async () => {
