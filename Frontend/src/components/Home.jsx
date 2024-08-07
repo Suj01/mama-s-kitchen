@@ -1,27 +1,27 @@
-import { useEffect, useState } from "react";
 import {
-  Button,
-  Flex,
-  Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
-  Input,
-  Textarea,
-  useDisclosure,
-  FormControl,
-  FormLabel,
-  Box,
-  Image,
-  SimpleGrid,
-  Stack,
-  Heading,
-  Skeleton
+    Box,
+    Button,
+    Flex,
+    FormControl,
+    FormLabel,
+    Heading,
+    Image,
+    Input,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    ModalOverlay,
+    SimpleGrid,
+    Skeleton,
+    Stack,
+    Text,
+    Textarea,
+    useDisclosure
 } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
 
 const Home = () => {
@@ -37,7 +37,7 @@ const Home = () => {
   useEffect(() => {
     const fetchFoods = async () => {
       try {
-        const res = await fetch("https://mama-s-kitchen-kkub.vercel.app/products/getProducts");
+        const res = await fetch("https://mama-s-kitchen.onrender.com/products/getProducts");
         if (!res.ok) throw new Error('Network response was not ok');
         const data = await res.json();
         setFoods(data.allProducts || []);
@@ -54,7 +54,7 @@ const Home = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const res = await fetch("https://mama-s-kitchen-kkub.vercel.app/cart/");
+        const res = await fetch("https://mama-s-kitchen.onrender.com/cart/");
         if (!res.ok) throw new Error('Network response was not ok');
         const data = await res.json();
         setCartItems(data.products || []);
@@ -68,7 +68,7 @@ const Home = () => {
 
   const handleAddNewFood = async () => {
     try {
-      const res = await fetch("https://mama-s-kitchen-kkub.vercel.app/products/postProduct", {
+      const res = await fetch("https://mama-s-kitchen.onrender.com/products/postProduct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -95,7 +95,7 @@ const Home = () => {
 
   const handleAddToCart = async (productId) => {
     try {
-      const res = await fetch("https://mama-s-kitchen-kkub.vercel.app/cart/addToCart", {
+      const res = await fetch("https://mama-s-kitchen.onrender.com/cart/addToCart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
 import {
+  Badge,
   Box,
-  Heading,
-  SimpleGrid,
-  Stack,
-  Text,
-  Image,
   Button,
-  Skeleton,
   Flex,
-  Badge
+  Heading,
+  Image,
+  SimpleGrid,
+  Skeleton,
+  Stack,
+  Text
 } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -19,7 +19,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await fetch("https://mama-s-kitchen-kkub.vercel.app/cart/getCartItems");
+        const response = await fetch("https://mama-s-kitchen.onrender.com/cart/getCartItems");
         if (!response.ok) {
           throw new Error("Failed to fetch cart items");
         }
