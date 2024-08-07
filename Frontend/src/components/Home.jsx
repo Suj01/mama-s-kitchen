@@ -37,7 +37,7 @@ const Home = () => {
   useEffect(() => {
     const fetchFoods = async () => {
       try {
-        const res = await fetch("http://localhost:8080/products/getProducts");
+        const res = await fetch("https://mama-s-kitchen-kkub.vercel.app/products/getProducts");
         if (!res.ok) throw new Error('Network response was not ok');
         const data = await res.json();
         setFoods(data.allProducts || []);
@@ -54,7 +54,7 @@ const Home = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const res = await fetch("http://localhost:8080/cart/");
+        const res = await fetch("https://mama-s-kitchen-kkub.vercel.app/cart/");
         if (!res.ok) throw new Error('Network response was not ok');
         const data = await res.json();
         setCartItems(data.products || []);
@@ -68,7 +68,7 @@ const Home = () => {
 
   const handleAddNewFood = async () => {
     try {
-      const res = await fetch("http://localhost:8080/products/postProduct", {
+      const res = await fetch("https://mama-s-kitchen-kkub.vercel.app/products/postProduct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -95,7 +95,7 @@ const Home = () => {
 
   const handleAddToCart = async (productId) => {
     try {
-      const res = await fetch("http://localhost:8080/cart/addToCart", {
+      const res = await fetch("https://mama-s-kitchen-kkub.vercel.app/cart/addToCart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -19,7 +19,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await fetch("http://localhost:8080/cart/getCartItems");
+        const response = await fetch("https://mama-s-kitchen-kkub.vercel.app/cart/getCartItems");
         if (!response.ok) {
           throw new Error("Failed to fetch cart items");
         }
