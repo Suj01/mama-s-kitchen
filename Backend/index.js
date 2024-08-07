@@ -21,7 +21,7 @@ app.use("/cart", cartRouter);
 
 app.listen(port, async () => {
   try {
-    ConnectionToDB;
+    await ConnectionToDB;
     console.log("Database connected successfully!");
     console.log(`Server is running at port ${port}`);
   } catch (error) {
